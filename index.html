@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript Gravity Simulator</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
+
+h1 {
+	font-family: 'Orbitron', sans-serif;
+    text-align: center;
+}
+
+canvas {
+	border-style: solid;
+    border-width: 2px;
+    margin: 5%;
+    width: 90%; 
+    height: 500px;
+}
+
+button {
+	margin-left: 37.5%;
+    margin-right: 37.5%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    width: 25%;
+}
+
+</style>
+</head>
+<body>
+
+<h1>JavaScript Gravity Simulator</h1>
+<br>
+<button type="button" onClick="startGame()">Start Game</button>
+<canvas id="gameCanv"></canvas>
+<script>
+function startGame() {
+	const gameCanvas = document.getElementById("gameCanvas");
+	const ctx = gameCanvas.getContext("2d");
+    setInterval(runGame(), 10);
+}
+
+function runGame() {
+	document.getElementById("gameCanv").style.width = screen.width*0.9;
+    
+document.getElementById("gameCanv").style.width = screen.width*0.9;
+
+
+	ctx.clearRect(0, 0, 500*ratio, 500)
+    var ratio = (screen.width*0.9) / 500;
+	ctx.strokeStyle = "black";
+	ctx.beginPath();
+	ctx.arc(250*ratio, 250*ratio, 50*ratio, 0, 2*Math.PI);
+	ctx.stroke();
+}
+</script>
+
+</body>
+</html>
